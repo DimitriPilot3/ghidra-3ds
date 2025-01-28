@@ -95,6 +95,7 @@ import ghidra.app.decompiler.ClangLine;
 import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
 import ghidra.app.decompiler.component.DecompilerUtils;
+import ghidra.app.emulator.DefaultEmulator;
 import ghidra.app.emulator.Emulator;
 import ghidra.app.emulator.EmulatorConfiguration;
 import ghidra.app.emulator.EmulatorHelper;
@@ -253,7 +254,7 @@ public class Ghidra_3DSAnalyzer extends AbstractAnalyzer {
 		
 		// Emulator setup
 		emu_helper = new EmulatorHelper(program);
-		emu = new Emulator(emu_helper);
+		emu = new DefaultEmulator(emu_helper);
 		
 		Address tls_block_addr = program.getAddressFactory().getDefaultAddressSpace().getAddress(0xaaaa0000);
 		try {
